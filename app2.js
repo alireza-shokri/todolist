@@ -36,6 +36,7 @@ function chekText(){
         alert("کادر خالیه")
 }
 
+// save localStorage
 function savelocalhost(){ 
     count+=1
     console.log(count)
@@ -46,8 +47,7 @@ function savelocalhost(){
     Handl()
 }
 
-
-
+// createElement new
 function Handl(){
     new_item=$.createElement("div");
     new_item.classList.add('item');
@@ -71,30 +71,32 @@ function Handl(){
     new_status_wrok.addEventListener('click',status_wrok)
     new_delet.addEventListener('click',deletitem)
 }
+
 // onkeydown
 function Enterhandl(eventkey){
     if(eventkey.key=="Enter")
         chekText()
 }
-// ---------------
+
+// chanch status complate uncomplate
 function status_wrok(event){
     if(event.target){
         list.forEach(element=>{
-            if(event.target.parentElement.parentElement.children[0].innerHTML==element.content){
-                if(element.status==false){
-                    element.status=true;
-                    event.target.classList.add("complate")
-                    event.target.innerHTML="complate";
-                    event.target.parentElement.parentElement.children[0].classList.add('title_item_complate')            
-                }
-                else{
-                    element.status=false;
-                    event.target.classList.remove("complate")
-                    event.target.innerHTML="uncomplate";
-                    event.target.parentElement.parentElement.children[0].classList.remove("title_item_complate")   ;
-                }
-                localStorage.setItem('item',JSON.stringify(list));
+        if(event.target.parentElement.parentElement.children[0].innerHTML==element.content){
+            if(element.status==false){
+                element.status=true;
+                event.target.classList.add("complate")
+                event.target.innerHTML="complate";
+                event.target.parentElement.parentElement.children[0].classList.add('title_item_complate')            
             }
+            else{
+                element.status=false;
+                event.target.classList.remove("complate")
+                event.target.innerHTML="uncomplate";
+                event.target.parentElement.parentElement.children[0].classList.remove("title_item_complate")   ;
+            }
+            localStorage.setItem('item',JSON.stringify(list));
+        }
         })
     }
     else{
@@ -104,7 +106,7 @@ function status_wrok(event){
     }
 }
 
-
+// clear all item
 function clearAll(){
     if(list[0]){
         localStorage.removeItem("item");
@@ -114,7 +116,7 @@ function clearAll(){
         alert("چیزی برای پاک کردن نیست عزیزم")
 }
 
-
+// clear one item
 function deletitem(event){
   let which= list.findIndex(element=>{
         return (event.target.parentElement.parentElement.children[0].innerHTML==element.content)})
@@ -129,7 +131,7 @@ function deletitem(event){
 }
 
 
-
+// onloade auto first tiem
 function loadatuo(){
     if(JSON.parse(localStorage.getItem("item"))){
         list=JSON.parse(localStorage.getItem("item"));
@@ -148,7 +150,9 @@ function loadatuo(){
         });}
     inputElm.focus()
 }
+
 window.onload=loadatuo;
+
 clear_all.addEventListener("click",clearAll)
 buttonCradet.addEventListener("click",chekText)
 inputElm.addEventListener("keydown",Enterhandl)

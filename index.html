@@ -16,24 +16,26 @@
         .parent_all{
             width: 80%;
             margin: 10px auto;
-            /* background-color: red; */
         }
         .title{
             width: 250px;
             margin: 30px auto;
-            background-color: aquamarine;
             text-align: center;
+            background-color: aquamarine;
         }
         .input{
             display: block;
-            width: 100%;
+            width: 80%;
             padding: 10px;
             margin: 40px auto 0;
         }
+        .paent_button{
+            width: 79%;
+            margin: 10px auto;
+        }
         .button,.button_delt_all{
-            width: 150px;
+            width: 130px;
             padding: 10px;
-            margin-top: 10px;
             border: 1px solid black;
             outline: none;
         }
@@ -44,43 +46,39 @@
             background-color: brown;
         }
         .parent_item{
-            width: 100%;
-            margin-top: 40px;
-            margin-bottom: 50px;
-          
+            width:55%;
+            margin: 40px auto;
         }
         .item{
-            width: 90%;
-            margin: 4px auto;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 5px;
-            background-color: rgb(98, 146, 146);
+            border-radius: 8px;
         }
         .title_item{
-            width: 50%;
-            font-family: tahoma;
-            padding: 10px;
+            width: 45%;
             position:relative;
-            display: flex;
-            flex-wrap: wrap;
+            padding: 10px;
+            font-family: tahoma;
             font-size: 16px;
+            background-color:rgba(245, 222, 179, 0.575);
         }
-
            /*  */
         .title_item_complate{
-            background-color: rgba(255, 0, 0, 0.596);
             text-decoration: line-through;
+            background-color: rgba(255, 0, 0, 0.596);
             opacity: 70%;
             /* /// */
         }
+
         .uncomplate{
-            font-size: 18px;
-            background-color: blue;
-            padding: 10px;
             outline: none;
             border: none;
+            padding: 10px;
+            font-size: 18px;
+            background-color: blue;
             border-radius: 4px;
         }
         /*  */
@@ -88,22 +86,17 @@
             opacity: 80%;
         }
         /*  */
+        
         .delet{
-            font-size: 18px;
-            margin-left: 10px;
+            margin-left: 5px;
             padding: 10px;
+            font-size: 18px;
+            background-color:rgba(255, 68, 0, 0.795);
+            border-radius: 4px;
             outline: none;
             border: none;
-            border-radius: 4px;
-            background-color:rgba(255, 68, 0, 0.795);
-
         }
         @media screen and (max-width:780px){
-           .title_item{
-             width: 40%;
-           }
-            }
-        @media screen and (max-width:580px){
            .item{
             flex-wrap: wrap;
            }
@@ -116,9 +109,6 @@
             justify-content: end;
             margin-top: 4px;
            }
-           .delet{
-            margin-left: 5px;
-           }
             }
     </style>
 </head>
@@ -126,8 +116,10 @@
     <div class="parent_all">
         <h1 class="title">to do list for ever</h1>
         <input type="text" class="input" placeholder="enter the progrma : ">
-        <button class="button">click</button>
-        <button class="button_delt_all">clear all</button>
+        <div class="paent_button">
+            <button class="button">click</button>
+            <button class="button_delt_all">clear all</button>
+        </div>
         <div class="parent_item">
            
         </div>
