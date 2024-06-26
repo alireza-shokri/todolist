@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(3, 13, 68);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .parent_all{
+            width: 80%;
+            margin: 10px auto;
+            /* background-color: red; */
+        }
+        .title{
+            width: 250px;
+            margin: 30px auto;
+            background-color: aquamarine;
+            text-align: center;
+        }
+        .input{
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 40px auto 0;
+        }
+        .button,.button_delt_all{
+            width: 150px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid black;
+            outline: none;
+        }
+        .button{
+            background-color: wheat;
+        }
+        .button_delt_all{
+            background-color: brown;
+        }
+        .parent_item{
+            width: 100%;
+            margin-top: 40px;
+            margin-bottom: 50px;
+          
+        }
+        .item{
+            width: 90%;
+            margin: 4px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: rgb(98, 146, 146);
+        }
+        .title_item{
+            width: 50%;
+            font-family: tahoma;
+            padding: 10px;
+            position:relative;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 16px;
+        }
+
+           /*  */
+        .title_item_complate{
+            background-color: rgba(255, 0, 0, 0.596);
+            text-decoration: line-through;
+            opacity: 70%;
+            /* /// */
+        }
+        .uncomplate{
+            font-size: 18px;
+            background-color: blue;
+            padding: 10px;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+        }
+        /*  */
+        .complate{
+            opacity: 80%;
+        }
+        /*  */
+        .delet{
+            font-size: 18px;
+            margin-left: 10px;
+            padding: 10px;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+            background-color:rgba(255, 68, 0, 0.795);
+
+        }
+        @media screen and (max-width:780px){
+           .title_item{
+             width: 40%;
+           }
+            }
+        @media screen and (max-width:580px){
+           .item{
+            flex-wrap: wrap;
+           }
+           .title_item{
+             width: 100%;
+           }
+           .parent_complate_delet{
+            display: flex;
+            width: 100%;
+            justify-content: end;
+            margin-top: 4px;
+           }
+           .delet{
+            margin-left: 5px;
+           }
+            }
+    </style>
+</head>
+<body>
+    <div class="parent_all">
+        <h1 class="title">to do list for ever</h1>
+        <input type="text" class="input" placeholder="enter the progrma : ">
+        <button class="button">click</button>
+        <button class="button_delt_all">clear all</button>
+        <div class="parent_item">
+           
+        </div>
+    </div>
+    <script src="app2.js"></script>
+</body>
+</html>
